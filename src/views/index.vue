@@ -11,11 +11,11 @@
       <div class="heard_right">
         <div class="list">
           <p>名下客户</p>
-          <h3>23413</h3>
+          <h3><animate-number from="0" :to="23413" duration="2000"></animate-number></h3>
         </div>
         <div class="list" v-if="role_code === 1">
           <p>管理员</p>
-          <h3>56</h3>
+          <h3><animate-number from="0" :to="56" duration="2000"></animate-number></h3>
         </div>
       </div>
     </div>
@@ -24,14 +24,14 @@
       <div class="quick">
         <p class="fast">快捷功能</p>
         <div class="operation">
-          <div class="item">
+          <div class="item" @click="goAnchor">
             <div class="icon"><img style="width: 60px; height: 60px;" src="../assets/images/setting.png" alt=""></div>
             <div>
               <p>管理员维护</p>
               <span>点击维护管理员相关信息</span>
             </div>
           </div>
-          <div class="item">
+          <div class="item" @click="goCustomer">
             <div class="icon"><img style="width: 60px; height: 60px;" src="../assets/images/people.png" alt=""></div>
             <div>
               <p>客户维护</p>
@@ -42,7 +42,7 @@
       </div>
       <el-divider content-position="left">动态</el-divider>
       <div class="dynamic">
-        <p class="more">查看更多</p>
+        <p class="more" @click="goTicket">查看更多</p>
         <ul>
           <li v-for="item in 5">
             <img src="../assets/user.png" alt="">
@@ -69,7 +69,17 @@ export default {
       role_code: 1
     }
   },
-  methods: {}
+  methods: {
+    goAnchor () {
+      this.$router.push('/user/anchor')
+    },
+    goCustomer () {
+      this.$router.push('/user/customer')
+    },
+    goTicket () {
+      this.$router.push('/ticket')
+    }
+  }
 }
 </script>
 
@@ -140,7 +150,7 @@ p,h3 { margin: 0; padding: 0; }
 }
 .dynamic {
   position: relative;
-  .more { position: absolute; right: 0; font-size: 14px; color: #1890FF; }
+  .more { position: absolute; right: 0; font-size: 14px; color: #1890FF; cursor: pointer; }
   ul {
     padding-top: 15px;
     li {

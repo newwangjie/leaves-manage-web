@@ -12,7 +12,7 @@ Vue.mixin({
           var response = error.response
           if (response.status === 401) {
             // this.$message.error('未登录')
-            window.location.href = '/#/login'
+            // window.location.href = '/#/login'
           } else {
             this.$message.error('接口服务异常')
           }

@@ -17,7 +17,7 @@
       </div>
       <div class="g-search-right">
         <el-button-group>
-          <el-button icon="el-icon-circle-plus" size="small" type="primary" @click="getAddData()">新增</el-button>
+          <!-- <el-button icon="el-icon-circle-plus" size="small" type="primary" @click="getAddData()">新增</el-button> -->
         </el-button-group>
       </div>
     </el-form>
@@ -91,7 +91,7 @@ export default {
 
 <style lang="scss">
 .g-search {
-  border: 20px solid #eee; padding: 10px 10px; margin-bottom: 30px;
+  border: 20px solid #eee; padding: 10px 10px;
   .g-search-form {
     display: flex; justify-content:space-between;
     .g-search-right {
